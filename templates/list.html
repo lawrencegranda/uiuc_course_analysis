@@ -1,6 +1,6 @@
 {% block content %}
 {% for key, course in courses.items() %}
-<h3>{{key}}: {{course["title"]}}</h3>
+<button class="title" onclick="addCourse(event, '{{key}}')">{{key}}: {{course["title"]}}</button>
 <p class="desc">{{course["description"]}}</p>
 <p class="prereq"><b>Prerequisites:</b>
     {% for p in course["prerequisites"][:-1] %}{{ p }}, {% endfor %}

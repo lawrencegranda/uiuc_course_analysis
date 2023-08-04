@@ -12,13 +12,31 @@
 
 <body>
     <section class="main-content">
-        <div class="container">
-            
-            <input type="text" id="search-box" placeholder="Search..." name="text" class="form-control" autocomplete="off">
 
-            <div id="courses">
-                {% block content %}
-                {% endblock %}
+        <div id="counter">0</div>
+
+        <div class="container">
+            <h1>UIUC Course Analyzer</h1>
+
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'search')" id="defaultOpen">Course Search</button>
+                <button class="tablinks" onclick="openTab(event, 'plan')" id="plan-button">Selected</button>
+            </div>
+
+            <div id="pane">                  
+                <!-- Tab contents -->
+                <div id="search" class="tabcontent">
+                    <input type="text" id="search-box" placeholder="Search..." name="text" class="form-control" autocomplete="off">
+
+                    <div id="courses">
+                    </div>
+                </div>
+                  
+                <div id="plan" class="tabcontent">
+                    <div id="selected">
+                    </div>
+                </div>
+
             </div>
             
         </div>

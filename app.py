@@ -19,6 +19,7 @@ data = clean_data()
 def index():
     return render_template("bases/layout.html")
 
+
 @app.route("/search", methods=['POST', 'GET'])
 def search():
     query = request.form.get("query").lower()
@@ -39,12 +40,26 @@ def search():
                     break
          
     courses = dict()       
-    for k in (departments + titles + instructors)[:200]:
+    for k in (departments + titles + instructors)[:100]:
         courses[k] = data[k]
     
     return render_template("list.html", courses=courses)
 
 
+
+@app.route("/show", methods=['POST', 'GET'])
+def show():
+    try:
+        query = request.form.get("query").split(",")
+    
+        courses = dict()
+        for k in query:
+            courses[k] = data[k]
+            
+        return render_template("list.html", courses=courses)
+
+    except:
+        return """<p class="desc">No courses selected.</p>"""
 
 if __name__ == '__main__':
     app.run(debug=True)
