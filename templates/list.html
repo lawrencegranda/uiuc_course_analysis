@@ -1,0 +1,44 @@
+{% block content %}
+{% for key, course in courses.items() %}
+<h3>{{key}}: {{course["title"]}}</h3>
+<p class="desc">{{course["description"]}}</p>
+<p class="prereq"><b>Prerequisites:</b>
+    {% for p in course["prerequisites"][:-1] %}{{ p }}, {% endfor %}
+    {{course["prerequisites"][-1]}}.</p>
+<p class="gened"><b>General Education:</b>
+    {% for p in course["general_education"][:-1] %}{{ p }}, {% endfor %}
+    {{course["general_education"][-1]}}.</p>
+
+<table>
+        <tr>
+            <td><b>Average Grade:</b> {{ course["avg_grade"] }}</td>
+            <td><b>Best Instructor:</b> {{ course["top_instructor"] }}</td>
+        </tr>
+        <tr>
+            <td><b>Percent As:</b> {{ course["percent_a"] }}</td>
+            <td><b>Highest As Percentage:</b> {{ course["top_percent_a"] }}</td>
+        </tr>
+</table>
+
+<table class="ins">
+    <thead>
+        <tr>
+            <th>Instructor</th>
+            <th>Students</th>
+            <th>Average Grade</th>
+            <th>Percentage of As</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for name, ins in course["instructors"].items() %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ ins["countGPA"] }}</td>
+            <td>{{ ins["avg_grade"] }}</td>
+            <td>{{ ins["percent_a"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta charset="utf-8" />
+    <title>UIUC Classes</title>
+
+    <!-- Styles -->
+    {% include "bases/headers.html" %}
+
+</head>
+
+<body>
+    <section class="main-content">
+        <div class="container">
+            
+            <input type="text" id="search-box" placeholder="Search..." name="text" class="form-control" autocomplete="off">
+
+            <div id="courses">
+                {% block content %}
+                {% endblock %}
+            </div>
+            
+        </div>
+    </section>
+</body>
+
+</html>

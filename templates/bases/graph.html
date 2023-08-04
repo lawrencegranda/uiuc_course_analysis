@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta charset="utf-8" />
+    <title>UIUC Classes</title>
+
+    <!-- Styles -->
+    {% include "bases/headers.html" %}
+
+</head>
+
+<body>
+    <section class="main-content">
+        <div class="container">
+            <img src="{{ url_for('fig', cropzonekey = title) }}" alt="Image Placeholder" height="100">
+        </div>
+    </section>
+</body>
+
+</html>

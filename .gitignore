@@ -1,0 +1,14 @@
+**/__pycache__
+.venv_03_09_12
+__pycache__
+ba.py
+.idea
+test_app.py
+test_data.py
+public
+passenger_wsgi.py
+stderr.log
+tmp
+cgi-bin
+.vs
+test*.py

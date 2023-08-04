@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body,
+#siteWrapper {
+    background: #f9f9f9;
+    /* font-family: adobe-garamond-pro !important; */
+    font-family: Roboto, Sans-serif !important;
+    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+    font-size: 1em;
+}
+
+html {
+    --dark-color: rgba(4, 48, 3, .91);
+    --medium-color: #0ab864;
+    --light-color: #c1fcdf;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+table,
+thead,
+tr,
+tbody {
+    width: 100%;
+}
+
+.ins {
+    text-align: center;
+}
+
+th.ins {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+h3 {
+    margin-top: 1.5em;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+p.desc,
+p.prereq,
+p.gened {
+    margin-bottom: 0.25em;
+}
+
+table.ins {
+    margin-top: 0.5em;
+}
